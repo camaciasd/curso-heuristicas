@@ -17,6 +17,35 @@
 	
 	\section{Recocido Simulado}
 	
+		\begin{algorithm}[H]
+			\caption{Recocido Simulado (SA)}
+			\KwIn{\\$ n $: Tamaño de vecindad\\ $ c $: Control de temperatura\\$ t $: Número de iteraciones}
+		 	\KwOut{\\$ g $ : Mejor solución}
+				$ i \leftarrow 1 $ : Contador de iteraciones\;
+				$ g \leftarrow generarSolucionInicial() $ : Solución inicial\;
+				\While {$ i \leq t $}
+				{
+					$ p \leftarrow \emph{generarVecindad(n,g)}$ : Generar nueva vecindad\;
+					$ j \leftarrow 1 $ : Contador de la vecindad\;
+					\While {$ j \leq n $}
+					{
+						\uIf {$p_{j}$ mejor que $g$}
+						{
+							$ g \leftarrow p_{j} $\;
+						}
+						\uElseIf{$exp(\dfrac{f(g) - f(p_{j})}{c}) > rand(0,1)$}
+						{
+							$ g \leftarrow p_{j} $\;
+						}
+						
+					}			
+					$ i \leftarrow  i + 1 $\;
+					$ c \leftarrow  generarNuevoTamanoVecindad() $ : Genera el nuevo tamaño de la vecindad siguiente\;
+					$ n \leftarrow  generarNuevaTemperatura() $\ :  Genera el nuevo valor de control de temperatura;
+				}
+		 		\Return $ g $
+		 \end{algorithm}
+	
 	\section{Algoritmo Genético}
 	
 	\section{Optimización por Enjambre de Partículas}
