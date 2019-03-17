@@ -21,8 +21,21 @@
 	
 	\section{Optimización por Enjambre de Partículas}
 	
-	
-		
-	
+		\begin{algorithm}[H]
+			\caption{Optimización por Enjambre de Partículas (PSO)}
+			\KwIn{\\$ n $: Tamaño del enjambre\\ $ t $: Número de iteraciones}
+		 	\KwOut{\\$ g $ : Partícula con la mejor posición}
+				$ p \leftarrow \emph{inicializaEnjambre(n)}$ : Inicialización del enjambre\;
+				$ i \leftarrow 1 $ : Contador de iteraciones\;
+				$ g \leftarrow mejorParticula(p) $ : Mejor partícula\;
+				\While {$ i \leq t $}
+				{
+					$ nuevaVelocidad(p,g) $ : Actualiza la velocidad de las partículas\;
+					$ nuevaPosicion(p) $ : Calcular nuevas posiciones\;
+					$ g \leftarrow mejorParticula(p) $ : Obtener la Mejor partícula\;
+					$ i \leftarrow  i + 1 $\;
+				}
+		 		\Return $ g $
+		 \end{algorithm}
 
 \end{document}
