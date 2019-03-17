@@ -12,9 +12,7 @@
 \begin{document}
 
 	\maketitle
-		
-	\tableofcontents
-	
+			
 	\section{Recocido Simulado}
 	
 		\begin{algorithm}[H]
@@ -47,6 +45,24 @@
 		 \end{algorithm}
 	
 	\section{Algoritmo Genético}
+	
+		\begin{algorithm}[H]
+			\caption{Algoritmo Génetico (GA)}
+			\KwIn{\\$ n $: Tamaño de la población\\ $ t $: Número de generaciones}
+		 	\KwOut{\\$ g $ : Mejor individuo}
+				$ p \leftarrow \emph{inicializaPoblación(n)}$ : Inicialización la primera generación\;
+				$ i \leftarrow 1 $ : Contador de iteraciones\;
+				$ g \leftarrow mejorIndividuo(p) $ : Mejor mejor individuo de la generación\;
+				$q \leftarrow seleccionarParejas(p) $ : Selección de las parejas\;
+				\While {$ i \leq t $}
+				{
+					$ p \leftarrow cruza(q) $ : Proceso de cruza de parejas\;
+					$ p \leftarrow mutacion(p) $ : Proceso de Mutación de individuos\;
+					$ g \leftarrow mejorIndividuo(p) $ : Obtener el mejor individuo\;
+					$ i \leftarrow  i + 1 $\;
+				}
+		 		\Return $ g $
+		 \end{algorithm}
 	
 	\section{Optimización por Enjambre de Partículas}
 	
