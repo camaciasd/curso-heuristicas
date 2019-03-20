@@ -53,9 +53,9 @@
 				$ p \leftarrow \emph{inicializaPoblación(n)}$ : Inicialización la primera generación\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
 				$ g \leftarrow mejorIndividuo(p) $ : Mejor mejor individuo de la generación\;
-				$q \leftarrow seleccionarParejas(p) $ : Selección de las parejas\;
 				\While {$ i \leq t $}
 				{
+					$q \leftarrow seleccionarParejas(p) $ : Selección de las parejas\;
 					$ p \leftarrow cruza(q) $ : Proceso de cruza de parejas\;
 					$ p \leftarrow mutacion(p) $ : Proceso de Mutación de individuos\;
 					$ g \leftarrow mejorIndividuo(p) $ : Obtener el mejor individuo\;
