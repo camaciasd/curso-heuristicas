@@ -52,16 +52,16 @@
 			\KwIn{\\$ N $: Tamaño de población\\ $ n $: Número de celulas a clonar\\$ t $: Número de generaciones}
 		 	\KwOut{\\$ g $ : Mejor celula}
 				$ i \leftarrow 1 $ : Contador de generaciones\;
-				$ p \leftarrow generarPoblacionInicial(N) $ : Solución inicial\;
+				$ p \leftarrow generarPoblacionInicial(N) $ : Población inicial\;
 				\While {$ i \leq t $}
 				{
-					$ q \leftarrow mejoresCelulas(p, n) $ : Mejores celulas de la generación\;
+					$ q \leftarrow seleccionarMejoresCelulas(p, n) $ : Mejores celulas de la generación\;
 					$ c \leftarrow \emph{clonar(q)}$ : Generar clones\;
-					$ m \leftarrow \emph{mutarClones(c)}$ : Hipermutación\;
+					$ m \leftarrow \emph{mutar(c)}$ : Hipermutación\;
 					$ p \leftarrow  generarNuevaPoblacion(p, m, N) $ : Genera la nueva población\;
-					$ i \leftarrow  i + 1 $\;
 					$actualizarParametros() $\ :  Actualiza los parametros de clonación y mutación\;
-					$ g \leftarrow mejorCelula(p) $ : Mejor celula de la generación\;
+					$ g \leftarrow seleccionarMejorCelula(p) $ : Mejor celula de la generación\;
+					$ i \leftarrow  i + 1 $\;
 				}
 		 		\Return $ g $
 		 \end{algorithm}
@@ -72,15 +72,15 @@
 			\caption{Algoritmo Génetico (GA)}
 			\KwIn{\\$ n $: Tamaño de la población\\ $ t $: Número de generaciones}
 		 	\KwOut{\\$ g $ : Mejor individuo}
-				$ p \leftarrow \emph{inicializaPoblación(n)}$ : Inicialización la primera generación\;
+				$ p \leftarrow \emph{inicializarPoblacion(n)}$ : Inicialización la primera generación\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
-				$ g \leftarrow mejorIndividuo(p) $ : Mejor mejor individuo de la generación\;
+				$ g \leftarrow seleccionarMejorIndividuo(p) $ : Mejor mejor individuo de la generación\;
 				\While {$ i \leq t $}
 				{
 					$q \leftarrow seleccionarParejas(p) $ : Selección de las parejas\;
-					$ p \leftarrow cruza(q) $ : Proceso de cruza de parejas\;
-					$ p \leftarrow mutacion(p) $ : Proceso de Mutación de individuos\;
-					$ g \leftarrow mejorIndividuo(p) $ : Obtener el mejor individuo\;
+					$ p \leftarrow cruzar(q) $ : Proceso de cruza de parejas\;
+					$ p \leftarrow mutar(p) $ : Proceso de Mutación de individuos\;
+					$ g \leftarrow seleccionarMejorIndividuo(p) $ : Obtener el mejor individuo\;
 					$ i \leftarrow  i + 1 $\;
 				}
 		 		\Return $ g $
@@ -92,14 +92,14 @@
 			\caption{Optimización por Enjambre de Partículas (PSO)}
 			\KwIn{\\$ n $: Tamaño del enjambre\\ $ t $: Número de iteraciones}
 		 	\KwOut{\\$ g $ : Partícula con la mejor posición}
-				$ p \leftarrow \emph{inicializaEnjambre(n)}$ : Inicialización del enjambre\;
+				$ p \leftarrow \emph{inicializarEnjambre(n)}$ : Inicialización del enjambre\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
-				$ g \leftarrow mejorParticula(p) $ : Mejor partícula\;
+				$ g \leftarrow seleccionarMejorParticula(p) $ : Mejor partícula\;
 				\While {$ i \leq t $}
 				{
-					$ nuevaVelocidad(p,g) $ : Actualiza la velocidad de las partículas\;
-					$ nuevaPosicion(p) $ : Calcular nuevas posiciones\;
-					$ g \leftarrow mejorParticula(p) $ : Obtener la Mejor partícula\;
+					$ generarNuevaVelocidad(p,g) $ : Actualiza la velocidad de las partículas\;
+					$ generarNuevaPosicion(p) $ : Calcular nuevas posiciones\;
+					$ g \leftarrow seleccionarMejorParticula(p) $ : Obtener la Mejor partícula\;
 					$ i \leftarrow  i + 1 $\;
 				}
 		 		\Return $ g $
