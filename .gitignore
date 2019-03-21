@@ -1,4 +1,4 @@
-lista-algoritmos/*.aux
-lista-algoritmos/*.log
-lista-algoritmos/*.toc
-lista-algoritmos/*.synctex.gz
+*.aux
+*.log
+*.toc
+*.synctex.gz
