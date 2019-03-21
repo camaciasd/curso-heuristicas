@@ -43,6 +43,28 @@
 				}
 		 		\Return $ g $
 		 \end{algorithm}
+		 
+			
+	\section{Algoritmo de Selección Clonal}
+	
+		\begin{algorithm}[H]
+			\caption{Algoritmo de Selección Clonal (CLONALG)}
+			\KwIn{\\$ N $: Tamaño de población\\ $ n $: Número de celulas a clonar\\$ t $: Número de generaciones}
+		 	\KwOut{\\$ g $ : Mejor celula}
+				$ i \leftarrow 1 $ : Contador de generaciones\;
+				$ p \leftarrow generarPoblacionInicial(N) $ : Solución inicial\;
+				\While {$ i \leq t $}
+				{
+					$ q \leftarrow mejoresCelulas(p, n) $ : Mejores celulas de la generación\;
+					$ c \leftarrow \emph{clonar(q)}$ : Generar clones\;
+					$ m \leftarrow \emph{mutarClones(c)}$ : Hipermutación\;
+					$ p \leftarrow  generarNuevaPoblacion(p, m, N) $ : Genera la nueva población\;
+					$ i \leftarrow  i + 1 $\;
+					$actualizarParametros() $\ :  Actualiza los parametros de clonación y mutación\;
+					$ g \leftarrow mejorCelula(p) $ : Mejor celula de la generación\;
+				}
+		 		\Return $ g $
+		 \end{algorithm}
 	
 	\section{Algoritmo Genético}
 	
