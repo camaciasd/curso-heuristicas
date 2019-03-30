@@ -74,13 +74,16 @@
 		 	\KwOut{\\$ g $ : Mejor individuo}
 				$ p \leftarrow \emph{inicializarPoblacion(n)}$ : Inicialización la primera generación\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
-				$ g \leftarrow seleccionarMejorIndividuo(p) $ : Mejor mejor individuo de la generación\;
+				$ g \leftarrow seleccionarMejorIndividuo(p) $ : Obtener el mejor individuo\;
+				$ u_{c} \leftarrow generarUmbralCruza(0,1) $ : Umbral de cruza\;
+				$ u_{m} \leftarrow generarUmbralMutacion(0,1) $ : Umbral de mutación\;
 				\While {$ i \leq t $}
 				{
-					$q \leftarrow seleccionarParejas(p) $ : Selección de las parejas\;
-					$ p \leftarrow cruzar(q) $ : Proceso de cruza de parejas\;
-					$ p \leftarrow mutar(p) $ : Proceso de Mutación de individuos\;
-					$ g \leftarrow seleccionarMejorIndividuo(p) $ : Obtener el mejor individuo\;
+					$ q \leftarrow seleccionarParejas(p) $ : Selección de las parejas\;
+					$ p \leftarrow cruzar(q,u_{c}) $ : Proceso de cruza de parejas\;
+					$ p \leftarrow mutar(p,u_{m}) $ : Proceso de Mutación de individuos\;
+					$ p \leftarrow generarNuevaPoblacion(p) $ : Proceso de elitismo\;
+					$ g \leftarrow seleccionarMejorIndividuo(p) $\;
 					$ i \leftarrow  i + 1 $\;
 				}
 		 		\Return $ g $
