@@ -12,6 +12,8 @@
 \begin{document}
 
 	\maketitle
+	
+	\newpage
 			
 	\section{Recocido Simulado}
 	
@@ -44,6 +46,8 @@
 		 		\Return $ g $
 		 \end{algorithm}
 		 
+		 \newpage
+		 
 			
 	\section{Algoritmo de Selección Clonal}
 	
@@ -56,8 +60,8 @@
 				\While {$ i \leq t $}
 				{
 					$ q \leftarrow seleccionarMejoresCelulas(p, n) $ : Mejores celulas de la generación\;
-					$ c \leftarrow \emph{clonar(q)}$ : Generar clones\;
-					$ m \leftarrow \emph{mutar(c)}$ : Hipermutación\;
+					$ c \leftarrow clonar(q)$ : Generar clones\;
+					$ m \leftarrow mutar(c)$ : Hipermutación\;
 					$ p \leftarrow  generarNuevaPoblacion(p, m, N) $ : Genera la nueva población\;
 					$actualizarParametros() $\ :  Actualiza los parametros de clonación y mutación\;
 					$ g \leftarrow seleccionarMejorCelula(p) $ : Mejor celula de la generación\;
@@ -65,6 +69,8 @@
 				}
 		 		\Return $ g $
 		 \end{algorithm}
+		 
+		 \newpage
 	
 	\section{Algoritmo Genético}
 	
@@ -72,7 +78,7 @@
 			\caption{Algoritmo Génetico (GA)}
 			\KwIn{\\$ n $: Tamaño de la población\\ $ t $: Número de generaciones}
 		 	\KwOut{\\$ g $ : Mejor individuo}
-				$ p \leftarrow \emph{inicializarPoblacion(n)}$ : Inicialización la primera generación\;
+				$ p \leftarrow inicializarPoblacion(n)$ : Inicialización la primera generación\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
 				$ g \leftarrow seleccionarMejorIndividuo(p) $ : Obtener el mejor individuo\;
 				$ u_{c} \leftarrow generarUmbralCruza(0,1) $ : Umbral de cruza\;
@@ -88,6 +94,8 @@
 				}
 		 		\Return $ g $
 		 \end{algorithm}
+		 
+		 \newpage
 	
 	\section{Optimización por Enjambre de Partículas}
 	
@@ -95,7 +103,7 @@
 			\caption{Optimización por Enjambre de Partículas (PSO)}
 			\KwIn{\\$ n $: Tamaño del enjambre\\ $ t $: Número de iteraciones}
 		 	\KwOut{\\$ g $ : Partícula con la mejor posición}
-				$ p \leftarrow \emph{inicializarEnjambre(n)}$ : Inicialización del enjambre\;
+				$ p \leftarrow inicializarEnjambre(n)$ : Inicialización del enjambre\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
 				$ g \leftarrow seleccionarMejorParticula(p) $ : Mejor partícula\;
 				\While {$ i \leq t $}
@@ -105,6 +113,27 @@
 					$ g \leftarrow seleccionarMejorParticula(p) $ : Obtener la Mejor partícula\;
 					$ i \leftarrow  i + 1 $\;
 				}
+		 		\Return $ g $
+		 \end{algorithm}
+		 
+		 \newpage
+		 
+	\section{Búsqueda Armónica}
+	
+		\begin{algorithm}[H]
+			\caption{Búsqueda Armónica (HS)}
+			\KwIn{\\$ HMS $: Tamaño de la memoria\\ $ HMCR $: Razón de exploración\\$PAR$: Razón de ajuste de tono\\$BW$: Ancho de desplazamiento\\$NI$: Número de improvisaciones\\$l_{i}$: Límites inferiores\\$l_{s}$: Límites superiores}
+		 	\KwOut{\\$ g $ : Mejor melodía}
+				$ HM \leftarrow inicializarMemoria(HMS,l_{i},l_{s})$ : Inicialización de la memoria\;
+				$ i \leftarrow 1 $ : Contador de iteraciones\;
+				\While {$ i \leq NI $}
+				{
+					$s \leftarrow improvisarMelodia(HM, HMCR,l_{i},l_{s})$ : Creación de nueva melodía\;
+					$s \leftarrow ajustarTono(PAR, BW,l_{i},l_{s})$ : Ajuste al tono de la melodía\;
+					$HM \leftarrow actualizarMemoria(HM,s) $ : Actualización de la memoria\;
+					$ i \leftarrow  i + 1 $\;
+				}
+				$ g \leftarrow seleccionarMejorMelodia(p) $ : Mejor melodía de la memoria\;
 		 		\Return $ g $
 		 \end{algorithm}
 
