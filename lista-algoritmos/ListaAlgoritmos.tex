@@ -123,17 +123,17 @@
 		\begin{algorithm}[H]
 			\caption{Búsqueda Armónica (HS)}
 			\KwIn{\\$ HMS $: Tamaño de la memoria\\ $ HMCR $: Razón de exploración\\$PAR$: Razón de ajuste de tono\\$BW$: Ancho de desplazamiento\\$NI$: Número de improvisaciones\\$l_{i}$: Límites inferiores\\$l_{s}$: Límites superiores}
-		 	\KwOut{\\$ g $ : Mejor melodía}
+		 	\KwOut{\\$ g $ : Mejor armonía}
 				$ HM \leftarrow inicializarMemoria(HMS,l_{i},l_{s})$ : Inicialización de la memoria\;
 				$ i \leftarrow 1 $ : Contador de iteraciones\;
 				\While {$ i \leq NI $}
 				{
-					$s \leftarrow improvisarMelodia(HM, HMCR,l_{i},l_{s})$ : Creación de nueva melodía\;
-					$s \leftarrow ajustarTono(PAR, BW,l_{i},l_{s})$ : Ajuste al tono de la melodía\;
+					$s \leftarrow improvisarArmonia(HM, HMCR,l_{i},l_{s})$ : Creación de nueva armonía\;
+					$s \leftarrow ajustarTono(s, PAR, BW,l_{i},l_{s})$ : Ajuste al tono de la armonía\;
 					$HM \leftarrow actualizarMemoria(HM,s) $ : Actualización de la memoria\;
 					$ i \leftarrow  i + 1 $\;
 				}
-				$ g \leftarrow seleccionarMejorMelodia(HM) $ : Mejor melodía de la memoria\;
+				$ g \leftarrow seleccionarMejorArmonia(HM) $ : Mejor armonía de la memoria\;
 		 		\Return $ g $
 		 \end{algorithm}
 
