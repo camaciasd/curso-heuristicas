@@ -1,0 +1,103 @@
+\documentclass[10pt,letterpaper,twoside,openright]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\author{Carlos Antonio Macías Duarte}
+\title{Problema: Equipo de Fútbol}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[vlined, spanish, onelanguage, ruled, linesnumbered, lined]{algorithm2e}
+
+\setlength{\parskip}{\baselineskip}
+
+\begin{document}
+
+	\maketitle
+		
+	\section{Introducción}
+	
+		Va iniciar el torneo de fútbol de la escuela y tu trabajo es armar el equipo de tu salón de clases, todos pueden participar, son en total 23 alumnos y las alineaciones son de 11 jugadores por equipo, ¿Cual es la mejor alineación que puede formar?
+		
+		Cada uno de los alumnos del salón tiene un nivel de 1 al 5 en las diferentes posiciones, delantero, medio, defensa y portero, el objetivo del problema es que dependiendo del tipo de alineación que quieran usar, obtener la mejor alineación posible, también hay que tomar en cuenta la compatibilidad entre compañeros, pues hay unos que juegan mejor que otros combinados y otros que por llevarse mal reducen su eficiencia en el campo.
+		
+		La función para saber que tan buena es una alineación respecto a otra seria el promedio de las habilidades de todo el equipo tomando en cuenta la posición de los jugadores.
+		
+	\section{Ejercicios}
+	
+	Las alineaciones se leen como defensas, medios y delanteros, recuerda que también debe haber un portero, puedes hacer una versión de la solución solo tomando en cuenta las posiciones y no que tanto ayudan o perjudican ciertas combinaciones de alumnos y otra que tome en cuenta esto.
+		
+		\begin{enumerate}
+			\item 4-3-3
+			\item 4-5-1
+			\item 3-4-3
+			\item 4-4-2
+		\end{enumerate}
+		
+	\section{Restricciones}
+	
+	Las habilidades de cada uno de los alumnos del salón en cada posición son las siquientes.
+	
+	\begin{tabular}{c||cccc}
+	\textbf{Alumno} & \textbf{Portería} & \textbf{Defensa} &\textbf{Medio Campo} & \textbf{Delantera} \\ 
+	\hline	\hline 
+	\textbf{Juan} & 3 & 2 & 4 & 1 \\ 
+	\hline 
+	\textbf{Pedro} & 2 & 2 & 4 & 3 \\ 
+	\hline 
+	\textbf{Ana} & 4 & 1 & 3 & 4 \\ 
+	\hline 
+	\textbf{Ismael} & 2 & 3 & 2 & 2 \\ 
+	\hline 
+	\textbf{Andres} & 1 & 2 & 5 & 3 \\ 
+	\hline 
+	\textbf{Susana} & 3 & 4 & 2 & 1 \\ 
+	\hline 
+	\textbf{Oliver} & 1 & 5 & 2 & 3 \\ 
+	\hline 
+	\textbf{Andrea} & 2 & 5 & 2 & 3 \\ 
+	\hline 
+	\textbf{Sofia} & 4 & 4 & 1 & 2 \\ 
+	\hline 
+	\textbf{Jessica} & 1 & 1 & 1 & 5 \\ 
+	\hline 
+	\textbf{Armando} & 2 & 3 & 2 & 1 \\ 
+	\hline 
+	\textbf{Santos} & 5 & 1 & 3 & 3 \\ 
+	\hline 
+	\textbf{Benito} & 2 & 4 & 3 & 2 \\ 
+	\hline 
+	\textbf{Paula} & 2 & 4 & 5 & 3 \\ 
+	\hline 
+	\textbf{Carmen} & 2 & 4 & 3 & 3 \\ 
+	\hline 
+	\textbf{Eugenio} & 3 & 3 & 2 & 2 \\ 
+	\hline 
+	\textbf{Martha} & 2 & 2 & 1 & 1 \\ 
+	\hline 
+	\textbf{Pablo} & 1 & 1 & 5 & 3 \\ 
+	\hline 
+	\textbf{Anaid} & 1 & 5 & 2 & 2 \\ 
+	\hline 
+	\textbf{Diana} & 4 & 3 & 1 & 1 \\ 
+	\hline 
+	\textbf{Francisco} & 3 & 3 & 1 & 1 \\ 
+	\hline 
+	\textbf{Juan} & 3 & 3 & 3 & 3 \\ 
+	\hline 
+	\textbf{Giovanni} & 2 & 5 & 4 & 3 \\ 
+	\hline 
+	\end{tabular} 
+	
+	Y la siguiente lista muetra que tanto afecta el desempeño de algunos alumnos estas combinaciones.
+	
+	\begin{itemize}
+		\item Jessica y Santos son muy orgullosos si los pones en la misma posición pelearan por destacar y eso arruina su desempeño en 3 niveles en la posición donde jueguen.
+		\item Pablo en el medio campo ayuda mucho a que el resto del equipo mejore en 1 en esa área, pero disminuye en 1 las que lo rodean directamente.
+		\item Anaid y Diana apoyan mucho a Martha lo que ayuda a que ella suba 2 niveles en la posición donde se encuentre siempre y cuando ellas esten en a una posición de ella.
+		\item Oliver se siente muy presionado en la delantera cuando hay con el otros que son mejores que el y eso afecta en 1 su desempeño.
+		\item Santos y Francisco aumentan en dos sus niveles si juegan en la misma posición por lo bien que se llevan 
+	\end{itemize}
+		
+
+\end{document}
