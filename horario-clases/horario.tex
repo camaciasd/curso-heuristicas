@@ -1,0 +1,242 @@
+\documentclass[10pt,letterpaper,twoside,openright]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{adjustbox}
+
+\author{Carlos Antonio Macías Duarte}
+\title{Problema: Horario de Clases}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[vlined, spanish, onelanguage, ruled, linesnumbered, lined]{algorithm2e}
+
+\setlength{\parskip}{\baselineskip}
+
+\begin{document}
+
+	\maketitle
+
+	\section{Problema}
+
+	\section{Ejercicios}
+
+
+	\section{Restriciones}
+
+	Estos son los diferentes grupos que tienen disponibles las asignaturas que debes cursar
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ECUACIONES DIFERENCIALES}          & Juan              &              & 10:30-12:00  & 10:30-12:00  &              & 10:30-12:00  \\
+		\textbf{ÁLGEBRA LINEAL}                    & Pedro             & 08:30-10:00  &              & 08:30-10:00  & 08:30-10:00  &              \\
+		\textbf{CALCULO APLICADO}                  & Jocelyn           & 10:30-12:00  & 08:30-10:00  &              & 10:30-12:00  &              \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Misael            & 12:00-13:30  &              & 12:00-13:30  & 12:00-13:30  &              \\
+		\textbf{COMUNICACIÓN ORAL Y ESCRITA}       & Veronica          &              & 12:00-13:30  & 13:30-15:00  &              & 12:00-13:30  \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Oscar             &              & 07:00-08:30  & 07:00-08:30  &              & 07:00-08:30
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo A}
+		\label{tab:grupo_a}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ECUACIONES DIFERENCIALES}          & Jorge             & 12:00-13:30  &              & 12:00-13:30  & 12:00-13:30  &              \\
+		\textbf{ÁLGEBRA LINEAL}                    & Luis              &              & 10:30-12:00  & 10:30-12:00  &              & 10:30-12:00  \\
+		\textbf{CALCULO APLICADO}                  & Gabriela          & 10:30-12:00  & 08:30-10:00  &              & 10:30-12:00  &              \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Santos            & 07:00-08:30  &              &              & 07:00-08:30  & 08:30-10:00  \\
+		\textbf{COMUNICACIÓN ORAL Y ESCRITA}       & Alejandra         &              & 07:00-08:30  & 07:00-08:30  &              & 07:00-08:30  \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Alejandro         & 08:30-10:00  &              & 08:30-10:00  & 08:30-10:00  &
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo B}
+		\label{tab:grupo_b}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Francisco & 12:00-13:30 &             & 12:00-13:30 & 12:00-13:30 &             \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Juan      & 07:00-08:30 &             &             & 07:00-08:30 & 08:30-10:00 \\
+		\textbf{ÁLGEBRA LINEAL}                    & Pablo     & 08:30-10:00 &             & 08:30-10:00 & 08:30-10:00 &             \\
+		\textbf{CALCULO APLICADO}                  & Gabriela  &             & 10:30-12:00 & 10:30-12:00 &             & 10:30-12:00 \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Carlos    &             & 07:00-08:30 & 07:00-08:30 &             & 07:00-08:30 \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Oscar     & 10:30-12:00 & 08:30-10:00 &             & 10:30-12:00 &
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo C}
+		\label{tab:grupo_c}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Dafne     & 07:00-08:30 &             &             & 07:00-08:30 & 08:30-10:00 \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Hugo      &             & 07:00-08:30 & 07:00-08:30 &             & 07:00-08:30 \\
+		\textbf{ÁLGEBRA LINEAL}                    & Moctezuma & 10:30-12:00 & 08:30-10:00 &             & 10:30-12:00 &             \\
+		\textbf{CALCULO APLICADO}                  & Ana       & 12:00-13:30 &             & 12:00-13:30 & 12:00-13:30 &             \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Angel     & 08:30-10:00 &             & 08:30-10:00 & 08:30-10:00 &             \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & David     &             & 10:30-12:00 & 10:30-12:00 &             & 10:30-12:00
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo D}
+		\label{tab:grupo_d}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Americo  &             & 07:00-08:30 & 07:00-08:30 &             & 07:00-08:30 \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Sandy    & 08:30-10:00 &             & 08:30-10:00 & 08:30-10:00 &             \\
+		\textbf{ÁLGEBRA LINEAL}                    & Giovanni &             & 10:30-12:00 & 10:30-12:00 &             & 10:30-12:00 \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Sofia    & 10:30-12:00 & 08:30-10:00 &             & 10:30-12:00 &             \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & David    & 12:00-13:30 &             & 12:00-13:30 & 12:00-13:30 &            
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo E}
+		\label{tab:grupo_e}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Monserrat & 08:30-10:00 &             & 08:30-10:00 & 08:30-10:00 &             \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Sandy     & 10:30-12:00 & 08:30-10:00 &             & 10:30-12:00 &             \\
+		\textbf{ÁLGEBRA LINEAL}                    & Alondra   & 12:00-13:30 &             & 12:00-13:30 & 12:00-13:30 &             \\
+		\textbf{CALCULO APLICADO}                  & Carmen    &             & 07:00-08:30 & 07:00-08:30 &             & 07:00-08:30 \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Sofia     &             & 10:30-12:00 & 10:30-12:00 &             & 10:30-12:00 \\
+		\textbf{FUNDAMENTAL DE CIRCUITOS} & Jesus     & 07:00-08:30 &             &             & 07:00-08:30 & 08:30-10:00
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo F}
+		\label{tab:grupo_f}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Pedro    & 10:30-12:00 & 08:30-10:00 &             & 10:30-12:00 &             \\
+		\textbf{ÁLGEBRA LINEAL}                    & Carmen   & 07:00-08:30 &             &             & 07:00-08:30 & 08:30-10:00 \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Diego    & 12:00-13:30 &             & 12:00-13:30 & 12:00-13:30 &            
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo G}
+		\label{tab:grupo_g}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}   & Jorge    &             & 10:30-12:00 & 10:30-12:00 &             & 10:30-12:00 \\
+		\textbf{FÍSICA}               & Lourdes  &             & 07:00-08:30 & 07:00-08:30 &             & 07:00-08:30 \\
+		\textbf{CALCULO APLICADO}     & Jocelyn  & 08:30-10:00 &             & 08:30-10:00 & 08:30-10:00 &             \\
+		\textbf{ESTRUCTURAS DE DATOS} & Arturo   &             & 12:00-13:30 & 13:30-15:00 &             & 12:00-13:30
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo H}
+		\label{tab:grupo_h}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Newton   & 16:30-18:00 &             & 16:30-18:00 & 16:30-18:00 &             \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Agustin  &             & 18:30-20:00 & 18:30-20:00 &             & 18:30-20:00 \\
+		\textbf{ÁLGEBRA LINEAL}                    & Jessica  & 15:00-16:30 &             &             & 15:00-16:30 & 16:30-18:00 \\
+		\textbf{CALCULO APLICADO}                  & Felipe   & 13:30-15:00 & 13:30-15:00 &             & 13:30-15:00 &             \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Luz      & 20:00-21:30 &             & 20:00-21:30 & 20:00-21:30 &             \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Adolfo   &             & 15:00-16:30 & 15:00-16:30 &             & 15:00-16:30
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo I}
+		\label{tab:grupo_i}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Benito   & 18:30-20:00 & 16:30-18:00 &             & 18:30-20:00 &             \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Marcos   & 20:00-21:30 &             & 20:00-21:30 & 20:00-21:30 &             \\
+		\textbf{ÁLGEBRA LINEAL}                    & Mario    &             & 15:00-16:30 & 15:00-16:30 &             & 15:00-16:30 \\
+		\textbf{CALCULO APLICADO}                  & Felipe   &             & 18:30-20:00 & 18:30-20:00 &             & 18:30-20:00 \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Miriam   & 15:00-16:30 &             &             & 15:00-16:30 & 16:30-18:00 \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Sol      & 16:30-18:00 &             & 16:30-18:00 & 16:30-18:00 &            
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo J}
+		\label{tab:grupo_j}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Francisco & 13:30-15:00 & 13:30-15:00 &             & 13:30-15:00 &             \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Xavier    & 15:00-16:30 &             &             & 15:00-16:30 & 16:30-18:00 \\
+		\textbf{ÁLGEBRA LINEAL}                    & Jessica   & 16:30-18:00 &             & 16:30-18:00 & 16:30-18:00 &             \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Victor    &             & 15:00-16:30 & 15:00-16:30 &             & 15:00-16:30 \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Sol       & 18:30-20:00 & 16:30-18:00 &             & 18:30-20:00 &            
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo K}
+		\label{tab:grupo_k}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Mario    & 15:00-16:30 &             &             & 15:00-16:30 & 16:30-18:00 \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Xavier   &             & 15:00-16:30 & 15:00-16:30 &             & 15:00-16:30 \\
+		\textbf{ÁLGEBRA LINEAL}                    & Felipe   & 18:30-20:00 & 16:30-18:00 &             & 18:30-20:00 &             \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Victor   & 16:30-18:00 &             & 16:30-18:00 & 16:30-18:00 &             \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Antonio  &             & 18:30-20:00 & 18:30-20:00 &             & 18:30-20:00
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo L}
+		\label{tab:grupo_l}
+	\end{table}
+
+	\begin{table}[h!]
+		\centering
+		\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{c||ccccccc}
+		\textbf{Asignatura}                        & \textbf{Profesor} & \textbf{Lun} & \textbf{Mar} & \textbf{Mie} & \textbf{Jue} & \textbf{Vie} \\ \hline \hline
+		\textbf{ANÁLISIS VECTORIAL}                & Fausto   & 15:00-16:30 &             &             & 15:00-16:30 & 16:30-18:00 \\
+		\textbf{ECUACIONES DIFERENCIALES}          & Xavier   & 16:30-18:00 &             & 16:30-18:00 & 16:30-18:00 &             \\
+		\textbf{ÁLGEBRA LINEAL}                    & Ricardo  &             & 18:30-20:00 & 18:30-20:00 &             & 18:30-20:00 \\
+		\textbf{CALCULO APLICADO}                  & Santiago &             & 15:00-16:30 & 15:00-16:30 &             & 15:00-16:30 \\
+		\textbf{ESTRUCTURAS DE DATOS}              & Brian    & 18:30-20:00 & 16:30-18:00 &             & 18:30-20:00 &             \\
+		\textbf{ANÁLISIS FUNDAMENTAL DE CIRCUITOS} & Antonio  & 20:00-21:30 &             & 20:00-21:30 & 20:00-21:30 &            
+		\end{tabular}
+		\end{adjustbox}
+		\caption{Grupo M}
+		\label{tab:grupo_m}
+	\end{table}
+
+
+\end{document}
