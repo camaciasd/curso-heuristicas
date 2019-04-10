@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{adjustbox}
 
 \author{Carlos Antonio Macías Duarte}
 \title{Problema: Ruta para hacer incursiones}
@@ -15,11 +16,11 @@
 
 	\maketitle
 		
-	\section{Problema}
+	\section{Introducción}
 	
-		Estas en una zona con varios Gimnasios Pokémon y Poképaradas, se acerca tu hora de comida y todos los gimnasios van o tienen algunas raids. Y quieres aprovechar, ¿Cómo planeas la mejor ruta para lograrlo?
+		Estas en una zona con varios Gimnasios Pokémon y Poképaradas del juego Pokémon GO, se acerca tu hora de comida y todos los gimnasios van o tienen algunas incursiones. Y quieres aprovechar, ¿Cómo planeas la mejor ruta para lograrlo?
 		
-		Aquí se pueden considerar diferentes opciones dependiendo que quiera el jugador, ¿Quiere dar prioridad a incursiones de mayor nivel?, ¿Quieres hacer las más posibles?, ¿Busca registros nuevos?, ¿Tratar de conseguir Pokémon variocolor?, ¿Un pase EX?. Se pueden sacar diferentes escenarios de rutas dependiendo de que busca el jugador de Pokémon Go.
+		Aquí se pueden considerar diferentes opciones dependiendo que quiera el jugador, ¿Quiere dar prioridad a incursiones de mayor nivel?, ¿Quieres hacer las más posibles?, ¿Busca registros nuevos?, ¿Tratar de conseguir Pokémon variocolor?, ¿Un pase EX?. Se pueden sacar diferentes escenarios de rutas dependiendo de que busca el jugador de Pokémon GO.
 		
 	\section{Ejercicios}
 	
@@ -30,15 +31,18 @@
 			\item Hacer el mayor número posible de incursiones.
 			\item Buscar Pokémon variocolor.
 			\item Registrar Pokémon nuevos.
-			\item Capturar legendarios, incursiones de nivel 5, y despues tal vez si hay tiempo hacer las más incursiones posibles.
+			\item Capturar legendarios, incursiones de nivel 5, y después tal vez si hay tiempo hacer las más incursiones posibles.
 		\end{enumerate}
 		
-	\section{Restriciones}
+	\section{información y restriciones}
 	
 	La siguiente tabla nos dice cuantos Pokémon hay en cada nivel de en incursiones, cuantos no tiene registrado el jugador, y cuantos pueden salir variocolor.
 	
+	\begin{table}[h!]
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
 	\begin{tabular}{c||ccc} 
-	\textbf{Nivel} & \textbf{Cantidad} & \textbf{Sin registrar} & \textbf{Variocolor activ}o \\ 
+	\textbf{Nivel} & \textbf{Cantidad} & \textbf{Sin registrar} & \textbf{Variocolor activado} \\ 
 	\hline 
 	\textbf{1} & 10 & 2 & 8 \\ 
 	\hline 
@@ -51,51 +55,66 @@
 	\textbf{5} & 5 & 3 & 2 \\ 
 	\hline 
 	\end{tabular} 
+	\end{adjustbox}
+	\caption{Información de Pokémon en incursiones por nivel}
+	\label{tab:pokemon}
+	\end{table}
 	
-	Las siguientea tablas muestran lo que tardas de ir de un gimnasio a otro en minutos y las horas de inicio de incursión con su nivel, toma en cuenta que tambíen te tardas en cada incursión 5 minutos en lo que que entras, estas en la sala de espera, peleas y lo capturas.
+	Las siguientes tablas muestran lo que tardas de ir de un gimnasio a otro en minutos y las horas de inicio de incursión con su nivel, toma en cuenta que también te tardas en cada incursión 5 minutos en lo que que entras, estas en la sala de espera, peleas y lo capturas.
 	
+	\begin{table}[h!]
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
 	\begin{tabular}{c||*{10}{c|}}
   	\cline{1-2}
-  	1 & -                     				  		\\ \cline{1-3}
-  	2 & 4 & -                                 		\\ \cline{1-4}
-  	3 & 11 & 7 & -                             		\\ \cline{1-5}
- 	4 & 6 & 7 & 13 & -                        		\\ \cline{1-6}
- 	5 & 8 & 6 & 9 & 5 & -                     		\\ \cline{1-7}
- 	6 & 10 & 7 & 6 & 8 & 4 & -              		\\ \cline{1-8}
- 	7 & 15 & 11 & 7 & 13 & 8 & 5 & -             		\\ \cline{1-9}
-  	8 & 15 & 13 & 12 & 11 & 7 & 6 & 7 & -        		\\ \cline{1-10}
-  	9 & 14 & 13 & 14 & 9 & 7 & 8 & 10 & 4 & -     		\\ \hline
- 	10 & 12 & 12 & 16 & 6 & 7 & 10 & 14 & 8 & 5 & -	\\ \hline \hline
- 	Gimnasio & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10		\\
-	\end{tabular}
+  	\textbf{1} & -                     				  		\\ \cline{1-3}
+  	\textbf{2} & 4 & -                                 		\\ \cline{1-4}
+  	\textbf{3} & 11 & 7 & -                             	\\ \cline{1-5}
+ 	\textbf{4} & 6 & 7 & 13 & -                        		\\ \cline{1-6}
+ 	\textbf{5} & 8 & 6 & 9 & 5 & -                     		\\ \cline{1-7}
+ 	\textbf{6} & 10 & 7 & 6 & 8 & 4 & -              		\\ \cline{1-8}
+ 	\textbf{7} & 15 & 11 & 7 & 13 & 8 & 5 & -             	\\ \cline{1-9}
+  	\textbf{8} & 15 & 13 & 12 & 11 & 7 & 6 & 7 & -        	\\ \cline{1-10}
+  	\textbf{9} & 14 & 13 & 14 & 9 & 7 & 8 & 10 & 4 & -     	\\ \hline
+ 	\textbf{10} & 12 & 12 & 16 & 6 & 7 & 10 & 14 & 8 & 5 & -	\\ \hline \hline
+ 	\textbf{Gimnasio} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}		\\
+	\end{tabular} 
+	\end{adjustbox}
+	\caption{Costo en minutos de ir de un gimnasio a otro}
+	\label{tab:gimnasios}
+	\end{table}
 	
+	\begin{table}[h!]
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
 	\begin{tabular}{c||ccc}
-	\textbf{Gimnasio} & \textbf{Nivel de incursió}n & \textbf{Hora de Inicio} & \textbf{Hora de Fin} \\ 
+	\textbf{Gimnasio} & \textbf{Nivel de incursión} & \textbf{Hora de Inicio} & \textbf{Hora de Fin} \\ 
 	\hline 
 	\hline
-	1 & 5 & 12:05 & 12:50 \\ 
+	\textbf{1} & 5 & 12:05 & 12:50 \\ 
 	\hline 
-	2 & 1 & 13:00 & 13:45 \\ 
+	\textbf{2} & 1 & 13:00 & 13:45 \\ 
 	\hline 
-	3 & 3 & 12:27 & 13:12 \\ 
+	\textbf{3} & 3 & 12:27 & 13:12 \\ 
 	\hline 
-	4 & 4 & 12:41 & 13:26 \\ 
+	\textbf{4} & 4 & 12:41 & 13:26 \\ 
 	\hline 
-	5 & 4 & 13:19 & 14:04 \\ 
+	\textbf{5} & 4 & 13:19 & 14:04 \\ 
 	\hline 
-	6 & 1 & 12:27 & 13:12 \\ 
+	\textbf{6} & 1 & 12:27 & 13:12 \\ 
 	\hline 
-	7 & 3 & 12:32 & 13:17 \\ 
+	\textbf{7} & 3 & 12:32 & 13:17 \\ 
 	\hline 
-	8 & 5 & 13:22 & 14:07 \\ 
+	\textbf{8} & 5 & 13:22 & 14:07 \\ 
 	\hline 
-	9 & 5 & 12:01 & 12:46 \\ 
+	\textbf{9} & 5 & 12:01 & 12:46 \\ 
 	\hline 
-	10 & 1 & 12:53 & 13:38 \\ 
+	\textbf{10} & 1 & 12:53 & 13:38 \\ 
 	\hline 
-	\end{tabular} 
-	
-	
-		
+	\end{tabular} 	
+	\end{adjustbox}
+	\caption{Horarios de las incursiones}
+	\label{tab:incursiones}
+	\end{table}
 
 \end{document}

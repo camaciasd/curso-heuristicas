@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{adjustbox}
 
 \author{Carlos Antonio Macías Duarte}
 \title{Problema: Equipo de Fútbol}
@@ -34,10 +35,13 @@
 			\item 4-4-2
 		\end{enumerate}
 		
-	\section{Restricciones}
+	\section{Información y restricciones}
 	
 	Las habilidades de cada uno de los alumnos del salón en cada posición son las siquientes.
 	
+	\begin{table}[h!]
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
 	\begin{tabular}{c||cccc}
 	\textbf{Alumno} & \textbf{Portería} & \textbf{Defensa} &\textbf{Medio Campo} & \textbf{Delantera} \\ 
 	\hline	\hline 
@@ -88,8 +92,12 @@
 	\textbf{Giovanni} & 2 & 5 & 4 & 3 \\ 
 	\hline 
 	\end{tabular} 
+	\end{adjustbox}
+	\caption{Habilidad de los Alumnos}
+	\label{tab:habilidad}
+	\end{table}
 	
-	Y la siguiente lista muetra que tanto afecta el desempeño de algunos alumnos estas combinaciones.
+	Y la siguiente lista muestra que tanto afecta el desempeño de algunos alumnos estas combinaciones.
 	
 	\begin{itemize}
 		\item Jessica y Santos son muy orgullosos si los pones en la misma posición pelearan por destacar y eso arruina su desempeño en 3 niveles en la posición donde jueguen.
@@ -98,6 +106,7 @@
 		\item Oliver se siente muy presionado en la delantera cuando hay con el otros que son mejores que el y eso afecta en 1 su desempeño.
 		\item Santos y Francisco aumentan en dos sus niveles si juegan en la misma posición por lo bien que se llevan 
 	\end{itemize}
-		
-
+	
+	Algo importante sobre están combinaciones es que las habilidades en cada posición no pueden der menores a 1 ni mayores a 5, así que si al hacer un ajuste exceden estos limites se deben trucar a ellos.
+	
 \end{document}
